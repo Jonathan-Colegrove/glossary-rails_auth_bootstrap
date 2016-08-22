@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TYGlossary</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <div class="container">
+      <% if logged_in? %>
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+          <div class="separator">
+            <div>Logged in: <%= current_user.name %> | <%= link_to "Logout", logout_path %></div>
+            <div>
+              <%= link_to 'Terms', terms_path, class: "btn btn-default" %>
+              <%= link_to 'Categories', categories_path, class: "btn btn-default" %>
+            </div>
+          </div>
+        </nav>
+
+      <% else %>
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+          <%= link_to 'Login', login_path %> | <%= link_to 'Signup', signup_path %>
+        <nav>
+
+      <% end %>
+      <%= yield %>
+    </div>
+
+    <!-- <header>
+      <h1>Our &spades;Awesome&spades; Glossary</h1>
+      <div class="right_nav">
+        <button>
+          <a href="/terms">
+            <%= image_tag "t.png" %>
+            <%= image_tag "e.png" %>
+            <%= image_tag "r.png" %>
+            <%= image_tag "m.png" %>
+            <%= image_tag "s.png" %>
+          </a>
+        </button>
+
+        <button>
+          <a href="/categories">
+            <%= image_tag "c.png" %>
+            <%= image_tag "a.png" %>
+            <%= image_tag "t.png" %>
+            <%= image_tag "e.png" %>
+            <%= image_tag "g.png" %>
+            <%= image_tag "o.png" %>
+            <%= image_tag "r.png" %>
+            <%= image_tag "i.png" %>
+            <%= image_tag "e.png" %>
+            <%= image_tag "s.png" %>
+          </a>
+        </button>
+
+        <button>
+          <form action="/terms/search" method="post">
+            <input type="text" name="name" placeholder="Search...">
+            <input type="image" src="search.png" />
+          </form>
+        </button>
+      </div>
+    </header> -->
+  </body>
+</html>

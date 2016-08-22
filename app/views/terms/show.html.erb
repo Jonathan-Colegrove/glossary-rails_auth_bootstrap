@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+
+<p>
+  <strong>Name:</strong>
+  <%= @term.name %>
+</p>
+
+<p>
+  <strong>Definition:</strong>
+  <%= @term.definition %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @term.author %>
+</p>
+
+<p>
+  <strong>Resource:</strong>
+  <%= @term.resource %>
+</p>
+
+<%= link_to 'Edit', edit_term_path(@term), class: "btn btn-default" %> |
+<%= link_to 'Back', terms_path, class: "btn btn-default" %>
